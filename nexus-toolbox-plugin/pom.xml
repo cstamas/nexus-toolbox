@@ -40,6 +40,12 @@
       <version>${nexus.version}</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.sonatype.nexus</groupId>
+      <artifactId>nexus-rest-api</artifactId>
+      <version>${nexus.version}</version>
+      <scope>provided</scope>
+    </dependency>
 
     <!-- Basic testing -->
     <dependency>
