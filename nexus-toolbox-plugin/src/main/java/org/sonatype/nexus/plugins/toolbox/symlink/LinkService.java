@@ -20,7 +20,7 @@ public interface LinkService
      * @param linkPath
      */
     void symlink( Repository targetRepository, String targetPath, Repository linkRepository, String linkPath )
-        throws StorageException;
+        throws ItemNotFoundException, StorageException;
 
     /**
      * Returns true if the specified path in given repository is a symlink, false otherwise.

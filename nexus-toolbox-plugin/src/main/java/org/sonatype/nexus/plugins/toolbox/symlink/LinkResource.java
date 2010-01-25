@@ -10,6 +10,7 @@ import org.restlet.data.Response;
 import org.restlet.data.Status;
 import org.restlet.resource.ResourceException;
 import org.restlet.resource.Variant;
+import org.sonatype.nexus.proxy.ItemNotFoundException;
 import org.sonatype.nexus.proxy.NoSuchRepositoryException;
 import org.sonatype.nexus.proxy.StorageException;
 import org.sonatype.nexus.proxy.repository.Repository;
@@ -80,6 +81,10 @@ public class LinkResource
         catch ( NoSuchRepositoryException e )
         {
             throw new ResourceException( Status.CLIENT_ERROR_BAD_REQUEST, e.getMessage(), e );
+        }
+        catch ( ItemNotFoundException e )
+        {
+            throw new ResourceException( Status.CLIENT_ERROR_NOT_FOUND, e.getMessage(), e );
         }
         catch ( StorageException e )
         {
